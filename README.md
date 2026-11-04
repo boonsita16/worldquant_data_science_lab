@@ -105,3 +105,14 @@ Alpha
 Automated Alpha Selection
 - cross-validation
 - RidgeCV and LassoCV
+
+Model Evaluation
+- Build DRY metric function
+- def get_rmse(model, X, y_true):
+    y_pred = model.predict(X)
+    return np.sqrt(mean_squared_error(y_true, y_pred))
+- Small gap between RMSE train and RMSE test means good generalization
+- Plots: predict vs actual, residual
+- Heteroscedasticity (non-constant error variance): small residual at low prices, large spread at high prices
+- best_model = df_results["Test_RMSE"].idxmin()
+  
